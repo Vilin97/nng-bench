@@ -5,7 +5,9 @@ theorem-proving game) in a real web browser for **10 minutes**, starting from Tu
 number of levels the game marks as solved. Every run is screen-recorded at 25 fps with a visible cursor.
 
 **Videos (5x speed, banner with clock, levels solved and mistakes):**
-[YouTube playlist "NNG Speedrun: AI models play the Natural Number Game"](https://www.youtube.com/playlist?list=PLXsryczdIguE)
+[YouTube playlist "NNG Speedrun: AI models play the Natural Number Game"](https://www.youtube.com/playlist?list=PLXsryczdIguE).
+Bonus: [Claude Haiku 5.5 finishes the whole game](https://youtu.be/SleW3H6I5Dw), all worlds in order, 78 of 79 levels in 36:38
+(the 79th, Power World level 10, is Fermat's Last Theorem and cannot be solved in the game).
 
 ## Rules
 
@@ -24,17 +26,19 @@ number of levels the game marks as solved. Every run is screen-recorded at 25 fp
 
 | Model | Levels, editor | Levels, typewriter | Lean mistakes (ed / tw) | Computer-use mistakes (ed / tw) | Sec per action (ed) | Cost (ed / tw) |
 |---|---|---|---|---|---|---|
-| Claude Fable 5.2 | 65 | 41 | 2 / 0 | 2 / 1 | 2.1 | $8.37 / $11.02 |
-| Claude Opus 5.5 | 61 | 32 | 1 / 0 | 3 / 1 | 2.8 | $10.03 / $6.50 |
-| GPT 6.1 Terra | 54 | 28 | 4 / 2 | 1 / 1 | 2.9 | $2.28 / $2.29 |
-| Claude Sonnet 5.5 | 48 | 35 | 3 / 2 | 2 / 0 | 2.1 | $4.20 / $3.92 |
-| GPT 6.1 Sol | 47 | 31 | 1 / 2 | 1 / 1 | 3.7 | $3.11 / $3.72 |
-| GPT 6.2 Sol | 38 | 43 | 2 / 2 | 1 / 2 | 6.0 | $1.35 / $4.39 |
-| Gemini 4 Hydrogen | 36 | 18 | 0 / 0 | 1 / 1 | 5.1 | $2.30 / $1.72 |
-| Gemini 4 Neon | 36 | 23 | 0 / 0 | 0 / 1 | 4.8 | $2.58 / $2.79 |
-| Claude Haiku 5.5 | 34 | 17 | 3 / 4 | 0 / 2 | 2.6 | $0.30 / $0.50 |
-| GPT 6.2 Astra | 23 | 24 | 1 / 1 | 1 / 0 | 10.5 | $2.13 / $4.86 |
-| Gemini 4 Carbon | 22 | 21 | 0 / 0 | 0 / 0 | 8.2 | $0.72 / $0.93 |
+| Claude Fable 5.2 | [65](https://youtu.be/0tthbfsxMbs) | [41](https://youtu.be/6kGi7D7Louk) | 2 / 0 | 2 / 1 | 2.1 | $8.37 / $11.02 |
+| Claude Opus 5.5 | [61](https://youtu.be/pkY5jDzmcSc) | [32](https://youtu.be/JLuzhALE5T8) | 1 / 0 | 3 / 1 | 2.8 | $10.03 / $6.50 |
+| GPT 6.1 Terra | [54](https://youtu.be/oJFH7DroT3Y) | [28](https://youtu.be/SBr3j_yHNco) | 4 / 2 | 1 / 1 | 2.9 | $2.28 / $2.29 |
+| Claude Sonnet 5.5 | [48](https://youtu.be/_PHEtjzIyNI) | [35](https://youtu.be/h9Y3oupXq0U) | 3 / 2 | 2 / 0 | 2.1 | $4.20 / $3.92 |
+| GPT 6.1 Sol | [47](https://youtu.be/0wv1XMi_OkA) | [31](https://youtu.be/7lTheaV6Oeg) | 1 / 2 | 1 / 1 | 3.7 | $3.11 / $3.72 |
+| GPT 6.2 Sol | [38](https://youtu.be/JKVeRcO7q_w) | [43](https://youtu.be/7TFHn3zNWnM) | 2 / 2 | 1 / 2 | 6.0 | $1.35 / $4.39 |
+| Gemini 4 Hydrogen | [36](https://youtu.be/mKBuDoa4UA0) | [18](https://youtu.be/-1UdG1ujw48) | 0 / 0 | 1 / 1 | 5.1 | $2.30 / $1.72 |
+| Gemini 4 Neon | [36](https://youtu.be/Ud-epQWm1jQ) | [23](https://youtu.be/FPK7S6uGKoY) | 0 / 0 | 0 / 1 | 4.8 | $2.58 / $2.79 |
+| Claude Haiku 5.5 | [34](https://youtu.be/KhBmXiToua8) | [17](https://youtu.be/i-xXe1fuVzk) | 3 / 4 | 0 / 2 | 2.6 | $0.30 / $0.50 |
+| GPT 6.2 Astra | [23](https://youtu.be/qWTl2TvtGa0) | [24](https://youtu.be/FNNTgFAHkFI) | 1 / 1 | 1 / 0 | 10.5 | $2.13 / $4.86 |
+| Gemini 4 Carbon | [22](https://youtu.be/qNrpqzFsOuE) | [21](https://youtu.be/sbaUd6-7Xsg) | 0 / 0 | 0 / 0 | 8.2 | $0.72 / $0.93 |
+
+Each level count links to that run's video.
 
 - **Lean mistakes**: distinct errors the game showed for a tactic or proof the model entered ("unsolved goals" on an unfinished
   proof does not count), counted from the screen recording (`vision_mistakes.py`).

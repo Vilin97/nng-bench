@@ -24,6 +24,8 @@ VIDEOS = {
     "typewriter-gpt-6.2-astra": ("GPT 6.2 Astra", 24, None),
     "typewriter-gpt-6.2-sol": ("GPT 6.2 Sol", 43, None),
     "full-editor-claude-haiku-5-5": ("Claude Haiku 5.5", 78, "full"),
+    "editor-claude-haiku-5-5": ("Claude Haiku 5.5", 34, None),
+    "typewriter-claude-haiku-5-5": ("Claude Haiku 5.5", 17, None),
     "editor-gemini-4-hydrogen": ("Gemini 4 Hydrogen", 36, None),
     "editor-gemini-4-neon": ("Gemini 4 Neon", 36, None),
     "editor-gemini-4-carbon": ("Gemini 4 Carbon", 22, None),
