@@ -1,0 +1,16 @@
+# run outputs (videos, browser profiles, logs) stay local
+runs/
+node_modules/
+youtube/thumbs/node_modules/
+youtube/thumbs/out/
+.venv/
+# generated from ~/.codex/models_cache.json by make_codex_catalog.py
+codex_catalog_direct.json
+# local Antigravity settings (backups and the MCP config used for the runs, with local paths)
+antigravity_*.json
+# logos are third-party marks: fetched by the thumbnail instructions, not redistributed
+youtube/thumbs/*.svg
+gamedata/
+*.bak
+__pycache__/
+.DS_Store

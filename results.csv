@@ -1,0 +1,23 @@
+model,mode,run,levels,lean_mistakes,cu_mistakes,browser_actions,sec_per_action,cost_usd,tokens_input,tokens_cache_write,tokens_cache_read,tokens_output
+Claude Fable 5.2,editor,editor-claude-fable-5-2,65,2,2,285,2.1,8.37,158,588229,5839116,32899
+Claude Fable 5.2,typewriter,typewriter-claude-fable-5-2,41,0,1,217,2.8,11.02,92,911643,3216971,31409
+Claude Opus 5.5,editor,editor-claude-opus-5-5,61,1,3,211,2.8,10.03,276,490484,34979947,29226
+Claude Opus 5.5,typewriter,typewriter-claude-opus-5-5,32,0,1,97,6.2,6.5,194,415924,20327172,17550
+GPT 6.1 Terra,editor,editor-gpt-6.1-terra,54,4,1,206,2.9,2.28,397658,0,36870144,7649
+GPT 6.1 Terra,typewriter,typewriter-gpt-6.1-terra,28,2,1,167,3.6,2.29,555620,0,34080000,6226
+Claude Sonnet 5.5,editor,editor-claude-sonnet-5-5,48,3,2,288,2.1,4.2,204,541152,25324529,31707
+Claude Sonnet 5.5,typewriter,typewriter-claude-sonnet-5-5,35,2,0,166,3.6,3.92,174,561593,22862254,23316
+GPT 6.1 Sol,editor,editor-gpt-6.1-sol,47,1,1,164,3.7,3.11,311590,0,24313344,5800
+GPT 6.1 Sol,typewriter,typewriter-gpt-6.1-sol,31,2,1,138,4.3,3.72,426944,0,28105984,5461
+GPT 6.2 Sol,editor,editor-gpt-6.2-sol,38,2,1,100,6.0,1.35,214892,0,8830976,3758
+GPT 6.2 Sol,typewriter,typewriter-gpt-6.2-sol,43,2,2,144,4.2,4.39,471157,0,33944320,5565
+Gemini 4 Hydrogen,editor,editor-gemini-4-hydrogen,36,0,1,118,5.1,2.3,419455,0,20059961,22569
+Gemini 4 Hydrogen,typewriter,typewriter-gemini-4-hydrogen,18,0,1,139,4.3,1.72,374237,0,13385508,20250
+Gemini 4 Neon,editor,editor-gemini-4-neon,36,0,0,124,4.8,2.58,269918,0,9648664,21322
+Gemini 4 Neon,typewriter,typewriter-gemini-4-neon,23,0,1,98,6.1,2.79,286229,0,11497058,13605
+Claude Haiku 5.5,editor,editor-claude-haiku-5-5,34,3,0,227,2.6,0.3,162,525421,20803441,47151
+Claude Haiku 5.5,typewriter,typewriter-claude-haiku-5-5,17,4,2,260,2.3,0.5,184,852967,36919650,38466
+GPT 6.2 Astra,editor,editor-gpt-6.2-astra,23,1,1,57,10.5,2.13,103095,0,3064320,1939
+GPT 6.2 Astra,typewriter,typewriter-gpt-6.2-astra,24,1,0,72,8.3,4.86,210501,0,7693440,2483
+Gemini 4 Carbon,editor,editor-gemini-4-carbon,22,0,0,73,8.2,0.72,168995,0,2416651,13912
+Gemini 4 Carbon,typewriter,typewriter-gemini-4-carbon,21,0,0,104,5.8,0.93,229406,0,2868008,18706

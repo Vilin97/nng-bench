@@ -1,0 +1,14 @@
+{
+  "name": "nng-bench-thumbs",
+  "version": "1.0.0",
+  "description": "Claude/OpenAI/Gemini icons for the YouTube thumbnails",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "@lobehub/icons-static-svg": "^1.104.0"
+  },
+  "private": true
+}

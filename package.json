@@ -1,0 +1,17 @@
+{
+  "name": "nng-bench",
+  "version": "1.0.0",
+  "description": "AI models play the Natural Number Game (Lean 4) in a browser for 10 minutes; screen recordings and scoring",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "@anthropic-ai/claude-code": "^2.1.295",
+    "@openai/codex": "^0.170.0",
+    "@playwright/mcp": "^0.0.41",
+    "playwright": "^1.56.1"
+  },
+  "private": true
+}
