@@ -14,7 +14,7 @@ name, out = sys.argv[1], sys.argv[2]
 speed = float(sys.argv[3]) if len(sys.argv) > 3 and not sys.argv[3].startswith("--") else 5
 run = B / "runs" / name
 MODELS = {"claude-haiku-5-5": "Claude Haiku 5.5", "claude-fable-5-2": "Claude Fable 5.2", "claude-opus-5-5": "Claude Opus 5.5", "claude-sonnet-5-5": "Claude Sonnet 5.5",
-          "gpt-6.1-terra": "GPT 6.1 Terra", "gpt-6.1-sol": "GPT 6.1 Sol", "gpt-6.2-astra": "GPT 6.2 Astra", "gpt-6.2-sol": "GPT 6.2 Sol",
+          "gpt-6-luna": "GPT 6 Luna", "deepseek-4.1-flash": "DeepSeek V4.1 Flash", "gpt-6.1-terra": "GPT 6.1 Terra", "gpt-6.1-sol": "GPT 6.1 Sol", "gpt-6.2-astra": "GPT 6.2 Astra", "gpt-6.2-sol": "GPT 6.2 Sol",
           "gemini-4-hydrogen": "Gemini 4 Hydrogen", "gemini-4-neon": "Gemini 4 Neon", "gemini-4-carbon": "Gemini 4 Carbon"}
 full = name.startswith("full-")
 mode, model = name.removeprefix("full-").split("-", 1)

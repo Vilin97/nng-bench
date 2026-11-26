@@ -5,7 +5,7 @@ from pathlib import Path
 RUNS = Path(__file__).parent / "runs"
 BLOCKED = {"browser_evaluate", "browser_file_upload", "browser_install", "browser_close", "browser_console_messages",
            "browser_network_requests", "browser_run_code"}
-MODELS = ["gemini-4-hydrogen", "gemini-4-neon", "gemini-4-carbon", "claude-fable-5-2", "claude-sonnet-5-5", "claude-opus-5-5", "gpt-6.1-terra", "gpt-6.1-sol", "gpt-6.2-astra", "gpt-6.2-sol"]
+MODELS = ["gemini-4-hydrogen", "gemini-4-neon", "gemini-4-carbon", "claude-fable-5-2", "claude-sonnet-5-5", "claude-opus-5-5", "claude-haiku-5-5", "gpt-6-luna", "gpt-6.1-terra", "gpt-6.1-sol", "gpt-6.2-astra", "gpt-6.2-sol"]
 names = sys.argv[1:] or [f"{mode}-{m}" for mode in ("typewriter", "editor") for m in MODELS]
 
 for name in names:

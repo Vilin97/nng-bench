@@ -21,3 +21,7 @@ GPT 6.2 Astra,editor,editor-gpt-6.2-astra,23,1,1,57,10.5,2.13,103095,0,3064320,1
 GPT 6.2 Astra,typewriter,typewriter-gpt-6.2-astra,24,1,0,72,8.3,4.86,210501,0,7693440,2483
 Gemini 4 Carbon,editor,editor-gemini-4-carbon,22,0,0,73,8.2,0.72,168995,0,2416651,13912
 Gemini 4 Carbon,typewriter,typewriter-gemini-4-carbon,21,0,0,104,5.8,0.93,229406,0,2868008,18706
+GPT 6 Luna,editor,editor-gpt-6-luna,10,19,0,142,4.2,0.19,305161,0,15750144,11329
+GPT 6 Luna,typewriter,typewriter-gpt-6-luna,13,11,0,162,3.7,0.21,372270,0,16864000,8166
+DeepSeek V4.1 Flash,editor,editor-deepseek-4.1-flash,8,5,1,92,6.5,3.13,202905,0,10131712,24237
+DeepSeek V4.1 Flash,typewriter,typewriter-deepseek-4.1-flash,15,5,3,106,5.7,3.41,529126,0,10732160,23442

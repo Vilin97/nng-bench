@@ -25,6 +25,10 @@ VIDEOS = {
     "typewriter-gpt-6.2-sol": ("GPT 6.2 Sol", 43, None),
     "full-editor-claude-haiku-5-5": ("Claude Haiku 5.5", 78, "full"),
     "editor-claude-haiku-5-5": ("Claude Haiku 5.5", 34, None),
+    "editor-gpt-6-luna": ("GPT 6 Luna", 10, None),
+    "typewriter-gpt-6-luna": ("GPT 6 Luna", 13, None),
+    "editor-deepseek-4.1-flash": ("DeepSeek V4.1 Flash", 8, None),
+    "typewriter-deepseek-4.1-flash": ("DeepSeek V4.1 Flash", 15, None),
     "typewriter-claude-haiku-5-5": ("Claude Haiku 5.5", 17, None),
     "editor-gemini-4-hydrogen": ("Gemini 4 Hydrogen", 36, None),
     "editor-gemini-4-neon": ("Gemini 4 Neon", 36, None),
@@ -42,9 +46,9 @@ def svg(name, color=None):
 def page(run, model, levels, extra):
     maker = model.split()[0]   # Claude / GPT / Gemini
     logo = {"Claude": lambda: svg("claude-color.svg"), "GPT": lambda: svg("openai.svg", "#ffffff"),
-            "Gemini": lambda: svg("gemini-color.svg")}[maker]()
+            "Gemini": lambda: svg("gemini-color.svg"), "DeepSeek": lambda: svg("deepseek-color.svg")}[maker]()
     family, _, version = model.partition(" ")
-    accent = {"Claude": "#d97757", "GPT": "#10a37f", "Gemini": "#4285f4"}[maker]
+    accent = {"Claude": "#d97757", "GPT": "#10a37f", "Gemini": "#4285f4", "DeepSeek": "#4d6bfe"}[maker]
     mode = "Editor mode" if "editor" in run else "Typewriter mode"
     if extra == "full":
         score, unit, sub = "78<span class=of>/79</span>", "levels", "whole game, in order · 36:38"

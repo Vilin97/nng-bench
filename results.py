@@ -12,7 +12,7 @@ MODELS = {  # run name suffix -> display name, in table order
     "claude-fable-5-2": "Claude Fable 5.2", "claude-opus-5-5": "Claude Opus 5.5", "gpt-6.1-terra": "GPT 6.1 Terra",
     "claude-sonnet-5-5": "Claude Sonnet 5.5", "gpt-6.1-sol": "GPT 6.1 Sol", "gpt-6.2-sol": "GPT 6.2 Sol",
     "gemini-4-hydrogen": "Gemini 4 Hydrogen", "gemini-4-neon": "Gemini 4 Neon", "claude-haiku-5-5": "Claude Haiku 5.5",
-    "gpt-6.2-astra": "GPT 6.2 Astra", "gemini-4-carbon": "Gemini 4 Carbon",
+    "gpt-6.2-astra": "GPT 6.2 Astra", "gemini-4-carbon": "Gemini 4 Carbon", "gpt-6-luna": "GPT 6 Luna", "deepseek-4.1-flash": "DeepSeek V4.1 Flash",
 }
 
 def metrics(run):

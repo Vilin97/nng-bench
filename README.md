@@ -26,7 +26,7 @@ Bonus: [Claude Haiku 5.5 finishes the whole game](https://youtu.be/SleW3H6I5Dw),
 
 | Model | Levels, editor | Levels, typewriter | Lean mistakes (ed / tw) | Computer-use mistakes (ed / tw) | Sec per action (ed) | Cost (ed / tw) |
 |---|---|---|---|---|---|---|
-| Claude Fable 5.2 | [65](https://youtu.be/0tthbfsxMbs) | [41](https://youtu.be/6kGi7D7Louk) | 2 / 0 | 2 / 1 | 2.1 | $8.37 / $11.02 |
+| Claude Fable 5.2 | [65](https://youtu.be/0tthbfsxMbs)\* | [41](https://youtu.be/6kGi7D7Louk) | 2 / 0 | 2 / 1 | 2.1 | $8.37 / $11.02 |
 | Claude Opus 5.5 | [61](https://youtu.be/pkY5jDzmcSc) | [32](https://youtu.be/JLuzhALE5T8) | 1 / 0 | 3 / 1 | 2.8 | $10.03 / $6.50 |
 | GPT 6.1 Terra | [54](https://youtu.be/oJFH7DroT3Y) | [28](https://youtu.be/SBr3j_yHNco) | 4 / 2 | 1 / 1 | 2.9 | $2.28 / $2.29 |
 | Claude Sonnet 5.5 | [48](https://youtu.be/_PHEtjzIyNI) | [35](https://youtu.be/h9Y3oupXq0U) | 3 / 2 | 2 / 0 | 2.1 | $4.20 / $3.92 |
@@ -37,6 +37,11 @@ Bonus: [Claude Haiku 5.5 finishes the whole game](https://youtu.be/SleW3H6I5Dw),
 | Claude Haiku 5.5 | [34](https://youtu.be/KhBmXiToua8) | [17](https://youtu.be/i-xXe1fuVzk) | 3 / 4 | 0 / 2 | 2.6 | $0.30 / $0.50 |
 | GPT 6.2 Astra | [23](https://youtu.be/qWTl2TvtGa0) | [24](https://youtu.be/FNNTgFAHkFI) | 1 / 1 | 1 / 0 | 10.5 | $2.13 / $4.86 |
 | Gemini 4 Carbon | [22](https://youtu.be/qNrpqzFsOuE) | [21](https://youtu.be/sbaUd6-7Xsg) | 0 / 0 | 0 / 0 | 8.2 | $0.72 / $0.93 |
+| GPT 6 Luna | [10](https://youtu.be/1corllJn1xg)\* | [13](https://youtu.be/8uDpMuTQcag) | 19 / 11 | 0 / 0 | 4.2 | $0.19 / $0.21 |
+| DeepSeek V4.1 Flash | [8](https://youtu.be/U1ZNDKOjFSI) | [15](https://youtu.be/o_YbumHpv0Y) | 5 / 5 | 1 / 3 | 6.5 | $3.13 / $3.41 |
+
+\* Jumped ahead by typing a level URL: Fable skipped Algorithm World level 3 and Power World level 10 (65 counted);
+GPT 6 Luna got stuck on Tutorial World level 7 and went to Power World (10 counted, 6 of them in order).
 
 Each level count links to that run's video.
 
@@ -44,7 +49,7 @@ Each level count links to that run's video.
   proof does not count), counted from the screen recording (`vision_mistakes.py`).
 - **Computer-use mistakes**: browser actions that failed (stale element, click timeout, typing into a non-text element, ...).
 - **Sec per action**: 600 s divided by the number of browser actions in the editor-mode run.
-- **Cost**: what the run's tokens would cost at API list prices (the runs themselves used subscriptions). Per-run token totals
+- **Cost**: what the run's tokens cost at API list prices (the Claude, GPT and Gemini runs used subscriptions; DeepSeek ran on a pay-as-you-go Token Factory key). Per-run token totals
   are in `results.csv`; prices and sources are in `cost.py`.
 
 How each model was run:
@@ -54,6 +59,8 @@ How each model was run:
 | Claude Fable 5.2, Opus 5.5, Sonnet 5.5, Haiku 5.5 | [Claude Code](https://github.com/anthropics/claude-code) CLI, `claude -p` | default effort, Playwright MCP tools only (`--tools ""`) |
 | GPT 6.1 Terra / Sol, GPT 6.2 Sol / Astra | [Codex](https://github.com/openai/codex) CLI, `codex exec` | default effort; shell, web search, apps and sub-agents off; direct tool calls (see below) |
 | Gemini 4 Hydrogen / Neon / Carbon | Google Antigravity agent via its `agentapi` | `gemini-4-*-high`; Playwright MCP added to Antigravity |
+| GPT 6 Luna | Codex CLI | as the other GPT models |
+| DeepSeek V4.1 Flash | Codex CLI with [Nebius Token Factory](https://nebius.com/services/token-factory) as the provider | `deepseek-ai/DeepSeek-V4.1-Flash-1017`, Responses API, same settings as GPT |
 
 ## Analysis
 
@@ -71,6 +78,10 @@ How each model was run:
   the cost is re-reading the conversation (cached input) on every action: Opus re-read 35M cached tokens in its editor run,
   while Fable sent several actions per request (79 requests for 285 actions) and spent less than Opus despite twice the price
   per token.
+- **The small open and budget models struggle.** GPT 6 Luna (10 / 13 levels) made by far the most Lean errors (19 in editor
+  mode) and gave up on a Tutorial level by jumping to another world; DeepSeek V4.1 Flash (8 / 15) got stuck on Addition World
+  level 1 in editor mode for over 5 minutes. Both did better in typewriter mode, where the game checks each tactic as it is entered.
+  DeepSeek also costs more than Haiku here ($3.13 vs $0.30 for the editor run) because Token Factory does not discount cached input.
 - **Editor mode is worth about 1.5x more levels** for most models, since a whole proof goes in at once. GPT 6.2 Sol is the
   exception (43 in typewriter mode vs 38 in editor mode); for the slowest models (Carbon, Astra) the mode barely matters,
   because thinking time per level dominates.
@@ -91,7 +102,7 @@ How each model was run:
   typewriter runs predate the sentence; none of them switched modes.
 - **API stalls.** GPT 6.2 Astra's first runs lost minutes to OpenAI API stalls (several minutes for a reply with no reasoning)
   and were re-run.
-- **Parallel runs.** Some runs (5 of the 6 Gemini runs, and Haiku) ran at the same time on different browser ports.
+- **Parallel runs.** Some runs (5 of the 6 Gemini runs, Haiku, Luna and DeepSeek) ran at the same time on different browser ports.
 - **Prices** for OpenAI and Google come from third-party summaries of their pricing pages; Gemini 4 Carbon is at its
   introductory price ($2 / $10 per million tokens until 2026-12-01).
 

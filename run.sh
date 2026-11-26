@@ -1,5 +1,6 @@
 #!/bin/bash
 # usage: run.sh <name> <claude|codex|agy> <model> [duration_s]
+# codex with a model id containing "/" (e.g. deepseek-ai/DeepSeek-V4.1-Flash-1017) uses Nebius Token Factory (TOKENFACTORY_API_KEY).
 # agy: Gemini models through the running Antigravity app (agentapi; agy.sh/agy_rpc.sh/agy_follow.py); its Playwright MCP
 #   server and tool grants are set in ~/.gemini/config (mcp_config.json, config.json globalPermissionGrants).
 # INPUT_MODE=typewriter (default: one tactic at a time) or editor (whole proof in a multi-line editor)
@@ -142,6 +143,9 @@ while [ $(date +%s) -lt $DEADLINE ] && [ ! -f "$OUT/finished" ]; do
         -c "mcp_servers.playwright.command=\"$MCP_BIN\""
         -c "mcp_servers.playwright.args=[\"--cdp-endpoint\",\"http://127.0.0.1:$PORT\",\"--output-dir\",\"$OUT/mcp-out\"]"
         -c "mcp_servers.playwright.tool_timeout_sec=120" -c "mcp_servers.playwright.default_tools_approval_mode=\"approve\"" -c "mcp_servers.playwright.disabled_tools=[$(printf '"%s",' "${BLOCKED[@]}" | sed 's/,$//')]")
+    # models served by Nebius Token Factory (OpenAI Responses API; key in TOKENFACTORY_API_KEY), e.g. deepseek-ai/DeepSeek-V4.1-Flash-1017
+    case "$MODEL" in */*) CX+=(-c 'model_providers.tf.name="Nebius Token Factory"' -c 'model_providers.tf.base_url="https://api.tokenfactory.nebius.com/v1"'
+                              -c 'model_providers.tf.env_key="TOKENFACTORY_API_KEY"' -c 'model_providers.tf.wire_api="responses"' -c 'model_provider="tf"') ;; esac
     if [ $n -eq 0 ]; then
       run_limited $LEFT $B/node_modules/.bin/codex exec "${CX[@]}" "$PROMPT"
       TID=$(grep -m1 -o '"thread_id":"[^"]*"' "$OUT/agent.jsonl" | cut -d'"' -f4)
